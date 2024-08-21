@@ -1,26 +1,50 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import UserCard from './UserCard'; // Get the UserCard Component
+import Counter from './Counter';
+import UserInput from './UserInput';
+import ConditionalRendering from './ConditionalRendering';
+import LoadingIndicator from './LoadingIndicator';
+import StatusMessage from './StatusMessage';
+import Navigation from './Navigation';
+export default function App() {
+  // Create a variable of type User
+ const profile = {bio:"abc",website:"def"}
+ const retrieveData = (name:string) => alert(`Name has been passed ${name}`)
+  const users = [
+    {
+    id:1,
+    name:"Alice",
+    age:28,
+    email:"alice@example.com"
+  },
+  {
+    id:2,
+    name:"John",
+    age:30,
+    email:"john@example.com"
+  }
+  ]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <div className='App'>
+    //   <h1>Hello World</h1>
+    //   <UserCard user={users[0]} profile={ profile }/>
+    //   <ul>
+    //   {
+    //     users.map((val)=><li key={val.id}>{val.name} - {val.email} - {val.age}</li>)
+    //   }
+    //   </ul>
+    //   <Counter/>
+    //   <hr/>
+    //   <UserInput onNameChange={(name:string)=>alert(`Name has been sent ${name}`)}/>
+    //   <ConditionalRendering/>
+    //   <LoadingIndicator/>
+    //   <StatusMessage/>
+    //   <Navigation/>
+    // </div>
+    <Navigation/>
+
   );
 }
 
-export default App;
+// Log to console
+console.log('Hello console');
